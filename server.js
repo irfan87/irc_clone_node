@@ -6,6 +6,21 @@ var mime = require('mime');
 // all cached files will be store as an array
 var cache = {};
 
+// Node doesn't care where you put the server variable but to be more readable and consise, just put before function send404()
+var server = http.createServer(function(request, response){
+  var filePath = false;
+
+  if (request.url == '/') {
+    filePath = 'public/index.html';
+  } else {
+    filePath = 'public' + request.url;
+  }
+
+  // serve static file
+  var absPath = './' + filePath;
+  serveStatic(response, cache, absPath);
+});
+
 // 404-error helper
 // it will send a 404 page if the page / file is not found
 function send404(response){
@@ -41,3 +56,6 @@ function serveStatic(response, cache, absPath){
     });
   }
 }
+
+server.listen(3000);
+console.log('Node is listening to port 3000');

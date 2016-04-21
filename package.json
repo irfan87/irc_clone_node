@@ -9,7 +9,7 @@
   "author": "Irfan <irfanshukri203@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "socket.io": "*",
-    "mime": "*"
+    "socket.io": "~0.9.6",
+    "mime": "~1.2.7"
   }
 }

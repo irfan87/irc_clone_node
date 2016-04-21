@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>IRC Clone Node</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+  </head>
+  <body>
+    <div id="content">
+      <div id="room"></div>
+      <div id="room-list"></div>
+      <div id="messages"></div>
+      <form id="send-form">
+        <input id="send-message" />
+        <input id="send-button" type="submit" value="Send" />
+        <div id="help">
+          Chat commands:
+          <ul>
+            <li>Change nickname: <code>/nick [username]</code></li>
+            <li>Join / create room: <code>/join [room name]</code></li>
+          </ul>
+        </div>
+      </form>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.3.min.js"   integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ="   crossorigin="anonymous"></script>
+    <script src="/javascripts/chat.js"></script>
+    <script src="/javascripts/chat_ui.js"></script>
+  </body>
+</html>

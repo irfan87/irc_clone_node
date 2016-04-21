@@ -21,6 +21,9 @@ var server = http.createServer(function(request, response){
   serveStatic(response, cache, absPath);
 });
 
+var chatServer = require('./lib/chat_server');
+chatServer.listen(server);
+
 // 404-error helper
 // it will send a 404 page if the page / file is not found
 function send404(response){
